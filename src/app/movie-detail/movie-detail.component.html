@@ -1,0 +1,37 @@
+<div class="card" *ngIf="movie">
+    <div class="card-body">
+        <span class="badge bg-warning mb-2">
+            ID:{{movie.id}}  Film Adı: {{movie.name}}<br>
+        </span><br>
+        <div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/img/{{movie.imageUrl}}" width="180px" class="card-image" alt="">
+                </div>
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-7">
+                    <p style="font-size: 24px;"><b>{{movie.name}}</b></p>
+                    <p>{{movie.description}}</p>
+                </div>
+            </div>
+           
+        </div><br>
+        <div class="form-group">
+            <label for="name"></label>
+            <input type="text" [(ngModel)]="movie.name" class="form-control" id="">
+        </div>
+        <div class="form-group">
+            <label for="imageUrl"></label>
+            <input type="text" [(ngModel)]="movie.imageUrl" class="form-control" id="">
+        </div>
+        <div class="form-group">
+            <label for="description"></label>
+            <textarea [(ngModel)]="movie.description" class="form-control"></textarea>
+        </div><br>
+        <button (click)="save()" class="btn btn-sm btn-warning">Kaydet</button>
+    </div>
+</div>
+
+

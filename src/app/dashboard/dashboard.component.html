@@ -1,0 +1,24 @@
+<div class="card my-2" *ngFor="let movie of movies">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="assets/img/{{movie.imageUrl}}" width="180px" class="card-image" alt="">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title" >
+                    <a routerLink='/detail/{{movie.id}}' style="text-decoration: none;">{{movie.name}}</a>
+                </h5>
+                <p>
+                    {{movie.description}}
+                </p>
+            </div>
+            <p class="card-text" style="float: right; padding-right: 15px;">
+                <a routerLink='/detail/{{movie.id}}' class="btn btn-warning btn-sm">Detaylar</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="movieLength>5" class="my-2 text-center">
+    <a routerLink="/movies" class="btn btn-warning">Tüm Filmler</a>
+</div>
